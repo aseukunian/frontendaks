@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aseukunianfrontendaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aseukunianfrontendaks
+  template:
+    metadata:
+      labels:
+        app: aseukunianfrontendaks 
+    spec:
+      containers:
+        - name: aseukunianfrontendaks 
+          image: armandacr.azurecr.io/aseukunianfrontendaks
+          ports:
+          - containerPort: 80
