@@ -1,19 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: aseukunianfrontendaks 
+  name: aseukunianfrontendaks  
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: aseukunianfrontendaks
+      app: aseukunianfrontendaks 
   template:
     metadata:
       labels:
-        app: aseukunianfrontendaks 
+        app: aseukunianfrontendaks  
     spec:
       containers:
-        - name: aseukunianfrontendaks 
-          image: armandacr.azurecr.io/aseukunianfrontendaks
+        - name: aseukunianfrontendaks  
+          image: armandacr.azurecr.io/aseukunianfrontendaks:latest
           ports:
           - containerPort: 80
+          imagePullPolicy: Always
